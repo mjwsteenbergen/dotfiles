@@ -1,0 +1,59 @@
+{
+	/*
+	   // Place your snippets for Markdown here. Each snippet is defined under a snippet name and has a prefix, body and 
+	   // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	   // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	   // same ids are connected.
+	   // Example:
+	   "Print to console": {
+		"prefix": "log",
+		"body": [
+		  "console.log('$1');",
+		  "$2"
+		],
+		"description": "Log output to console"
+	  }
+	*/
+	 "Generate toc": {
+	   "prefix": "md-toc",
+	   "body": [
+		"<md-toc></md-toc>"
+	   ]
+	 },
+	 "Generate cover": {
+	   "prefix": "md-cover",
+	   "body": [
+		"<md-cover title='${1:title}' author='${2:author}'></md-cover>$0"
+	   ]
+	 },
+	 "Generate formula": {
+	   "prefix": "md-formula",
+	   "body": [
+		"<md-formula>$1</md-formula>"
+	   ]
+	 },
+	  "Generate page": {
+	   "prefix": "md-page",
+	   "body": [
+		"<md-page></md-page>"
+	   ]
+	 },
+	   "Generate image": {
+	   "prefix": "md-img",
+	   "body": [
+		"<md-img src='$1' alt='$2'></md-img>"
+	   ]
+	 },
+	 "Generate todo": {
+	   "prefix": "-",
+	   "body": [
+		"- [ ] "
+	   ]
+	 },
+	 "Generate bibliography": {
+	   "prefix": "md-bib",
+	   "body": [
+		"<md-bib src='${1:source}'></md-bib>$0"
+	   ]
+	 }
+	}
