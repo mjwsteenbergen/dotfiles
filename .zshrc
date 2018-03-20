@@ -97,6 +97,6 @@ source $ZSH/oh-my-zsh.sh
 
 eval `dircolors ~/.dir_colors`
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.local_settings ]; then
+    . ~/.local_settings
 fi

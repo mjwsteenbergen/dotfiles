@@ -26,8 +26,6 @@ link ~/.dotfiles/.zshrc ~/.zshrc
 link ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
 link ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 link ~/.dotfiles/.nanorc ~/.nanorc
-link ~/.dotfiles/.bashrc ~/.bashrc
-link ~/.dotfiles/.bash_aliases ~/.bash_aliases
 link ~/.dotfiles/.dir_colors ~/.dir_colors
 
 
