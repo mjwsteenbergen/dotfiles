@@ -23,11 +23,10 @@ function link {
 
 
 link ~/.dotfiles/.zshrc ~/.zshrc
-link ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
-link ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 link ~/.dotfiles/.nanorc ~/.nanorc
 link ~/.dotfiles/.dir_colors ~/.dir_colors
-
+link ~/.dotfiles/.gitconfig/ ~/.gitconfig
+sudo ln -s ~/.dotfiles/doi2bib.sh /usr/local/bin/doi2bib
 
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zdharma/fast-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/fast-syntax-highlighting

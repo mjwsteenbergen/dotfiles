@@ -14,5 +14,13 @@
         "b196ecbd-2dd0-4616-8f71-aae4492dd2e6/4d106790-62cc-4e59-8ec0-cec5344d206f"
     ],
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": true
+    "workbench.activityBar.visible": true,
+    "window.zoomLevel": 0,
+    "cSpell.userWords": [
+        "lightbend"
+    ],
+    "cSpell.logLevel": "Information",
+    "cSpell.showStatus": false,
+    "wordcounter.count_lines": false,
+    "wordcounter.readtime": false
 }
