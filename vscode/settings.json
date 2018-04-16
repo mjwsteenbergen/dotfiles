@@ -22,5 +22,7 @@
     "cSpell.logLevel": "Information",
     "cSpell.showStatus": false,
     "wordcounter.count_lines": false,
-    "wordcounter.readtime": false
+    "wordcounter.readtime": false,
+    "window.restoreWindows": "none",
+    "window.newWindowDimensions": "maximized"
 }

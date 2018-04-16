@@ -62,6 +62,7 @@ plugins=(
   mvn
   zsh-autosuggestions
   fast-syntax-highlighting
+  gitignore
 )
 
 source $ZSH/oh-my-zsh.sh
