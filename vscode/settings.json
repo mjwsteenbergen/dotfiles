@@ -4,7 +4,7 @@
     "editor.minimap.enabled": false,
     "window.menuBarVisibility": "toggle",
     "git.autofetch": true,
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\bash.exe",
     "files.autoSave": "onWindowChange",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": false,
@@ -17,7 +17,8 @@
     "workbench.activityBar.visible": true,
     "window.zoomLevel": 0,
     "cSpell.userWords": [
-        "lightbend"
+        "lightbend",
+        "Spotify"
     ],
     "cSpell.logLevel": "Information",
     "cSpell.showStatus": false,
