@@ -14,64 +14,19 @@
 	"description": "Log output to console"
 	}
 */
-	"Generate toc": {
-		"prefix": "md-toc",
+	"Example": {
+		"prefix": "example",
 		"body": [
-	"<md-toc></md-toc>"
-		]
-	},
-	"Generate cover": {
-		"prefix": "md-cover",
-		"body": [
-	"<md-cover title='${1:title}' author='${2:author}'></md-cover>$0"
-		]
-	},
-	"Generate formula": {
-		"prefix": "md-formula",
-		"body": [
-	"<md-formula>$1</md-formula>"
-		]
-	},
-	"Generate page": {
-		"prefix": "md-page",
-		"body": [
-	"<md-page></md-page>"
-		]
-	},
-		"Generate image": {
-		"prefix": "md-img",
-		"body": [
-	"<md-img src='$1' alt='$2'></md-img>"
-		]
-	},
-	"Generate todo": {
-		"prefix": "-",
-		"body": [
-	"- [ ] "
-		]
-	},
-	"Generate bibliography": {
-		"prefix": "md-bib",
-		"body": [
-	"<md-bib src='${1:source}'>$2</md-bib>$0"
-		]
-	},
-	"Generate bib url": {
-		"prefix": "md-bib-url",
-		"body": [
-			"<md-bib-url>$1</md-bib-url>$0"
-		]
-	},
-	"Generate bib from doi": {
-		"prefix": "md-bib-doi",
-		"body": [
-			"<md-bib-doi>$1</md-bib-doi>$0"
-		]
-	},
-	"Collage": {
-		"prefix": "mdcollage",
-		"body": [
-	"<ul collage>\n\t$TM_SELECTED_TEXT\n</ul>$0"
-		]
+			"# H1\n## H2\n### H3\n#### H4\n##### H5\n###### H6",
+		],
+		"description": "Prints example"
 	}
+	"Example-Img": {
+		"prefix": "example-img",
+		"body": [
+			"![this is the alt text](https://images.unsplash.com/photo-1535190923871-9e9d9a2e1f2a?ixlib=rb-0.3.5&s=e74d53376fc23617ce5ed52c9996eaa9&auto=format&fit=crop&w=889&q=80)",
+		],
+		"description": "Prints example"
+	}
+	
 }

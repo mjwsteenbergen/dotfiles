@@ -34,7 +34,7 @@ transfer() {
             echo "File $file doesn't exists."
             return 1
         fi
-        
+
         if [ -d $file ];
         then
             # zip directory and transfer
@@ -46,13 +46,14 @@ transfer() {
             # transfer file
             curl --progress-bar --upload-file "$file" "https://transfer.sh/$basefile" >> $tmpfile
         fi
-    else 
+    else
         # transfer pipe
         curl --progress-bar --upload-file "-" "https://transfer.sh/$file" >> $tmpfile
     fi
    
     # cat output link
-    cat $tmpfile
+    output=$( cat $tmpfile )
+    echo ${output//%}
 
     # cleanup
     rm -f $tmpfile

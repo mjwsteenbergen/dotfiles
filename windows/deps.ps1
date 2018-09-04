@@ -29,8 +29,6 @@ choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
 choco install -y Microsoft-Hyper-V-All -source windowsFeatures
 choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 
-
-
 # browsers
 choco install GoogleChrome        --limit-output;
 choco install chromium            --limit-output;
@@ -43,9 +41,8 @@ choco install dotnetcore-sdk      --limit-output;
 choco install sourcetree          --limit-output;
 choco install jdk8                --limit-output;
 choco install docker              --limit-output;
-choco install insomnia-rest-api-client --limit-output;
+choco install postman             --limit-output;
 choco install jetbrainstoolbox    --limit-output;
-choco install cmder               --limit-output;
 
 # Software
 choco install vlc                 --limit-output;
@@ -55,7 +52,4 @@ choco install openvpn             --limit-output;
 choco install winrar              --limit-output;
 
 # Windows apps
-Get-AppxPackage VideoLAN.VLC
-Get-AppxPackageManifest -Package VideoLAN.VLC
-
-Get-AppxPackage -allusers SpotifyAB.SpotifyMusic | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+# Doesnt work. Stupid
