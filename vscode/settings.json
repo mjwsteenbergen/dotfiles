@@ -28,5 +28,12 @@
     "window.newWindowDimensions": "maximized",
     "cSpell.allowCompoundWords": true,
     "markdownConverter.Document.HeaderFooterEnabled": false,
-    "markdownConverter.Document.Paper.Margin": { "Top": "0", "Bottom": "0", "Left": "0", "Right": "0"}
+    "markdownConverter.Document.Paper.Margin": {
+        "Top": "0",
+        "Bottom": "0",
+        "Left": "0",
+        "Right": "0"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "breadcrumbs.enabled": false,
 }
