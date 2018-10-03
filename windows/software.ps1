@@ -15,16 +15,16 @@ function Refresh-Environment {
 }
 
 # browsers
-choco install GoogleChrome        --limit-output;
-choco install chromium            --limit-output;
-choco install firefox-dev   --pre --limit-output;
+choco install -y GoogleChrome        --limit-output;
+choco install -y chromium            --limit-output;
+choco install -y firefox-dev   --pre --limit-output;
 
 # Software
-choco install vlc                 --limit-output;
-choco install dropbox             --limit-output;
-choco install steam               --limit-output;
-choco install openvpn             --limit-output;
-choco install winrar              --limit-output;
+choco install -y vlc                 --limit-output;
+choco install -y dropbox             --limit-output;
+choco install -y steam               --limit-output;
+choco install -y openvpn             --limit-output;
+choco install -y winrar              --limit-output;
 
 # Windows apps
 # Doesnt work. Stupid

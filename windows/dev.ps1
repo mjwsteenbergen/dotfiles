@@ -10,11 +10,11 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -Us
 Add-AppxPackage -Path ~/Ubuntu.appx
 
 #Dev tools
-choco install git.install         --limit-output;
-choco install git-lfs.install     --limit-output;
-choco install dotnetcore-sdk      --limit-output;
-choco install sourcetree          --limit-output;
-choco install jdk8                --limit-output;
-choco install docker              --limit-output;
-choco install postman             --limit-output;
-choco install jetbrainstoolbox    --limit-output;
+choco install -y git.install         --limit-output;
+choco install -y git-lfs.install     --limit-output;
+choco install -y dotnetcore-sdk      --limit-output;
+choco install -y sourcetree          --limit-output;
+choco install -y jdk8                --limit-output;
+choco install -y docker              --limit-output;
+choco install -y postman             --limit-output;
+choco install -y jetbrainstoolbox    --limit-output;
