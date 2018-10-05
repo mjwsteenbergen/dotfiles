@@ -4,13 +4,8 @@
 
 module.exports = {
   config: {
-    materialBox: {
-      scheme: 'seti',
-      backgroundVibrancy: true,
-    },
-
-    // Choose either "stable" for receiving highly polished,
-    // or "canary" for less polished but more frequent updates
+    // choose either `'stable'` for receiving highly polished,
+    // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
@@ -19,63 +14,71 @@ module.exports = {
     // font family with optional fallbacks
     fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
-    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    // default font weight: 'normal' or 'bold'
+    fontWeight: 'normal',
 
-    // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
+    // font weight for bold characters: 'normal' or 'bold'
+    fontWeightBold: 'bold',
+
+    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
     cursorShape: 'BLOCK',
 
-    // set to true for blinking cursor
+    // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: false,
 
-    // color of the text
-    foregroundColor: '#fff',
-
-    // terminal background color
-    backgroundColor: '#000',
-
-    // border color (window, tabs)
-    borderColor: '#333',
-
-    // custom css to embed in the main window
+    // custom CSS to embed in the main window
     css: '',
 
-    // custom css to embed in the terminal window
+    // custom CSS to embed in the terminal window
     termCSS: '',
 
-    // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
-    // default: `false` on Linux, `true` on Windows (ignored on macOS)
+    // if you're using a Linux setup which show native menus, set to false
+    // default: `true` on Linux, `true` on Windows, ignored on macOS
     showHamburgerMenu: '',
 
-    // set to `false` if you want to hide the minimize, maximize and close buttons
+    // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
-    // default: `true` on windows and Linux (ignored on macOS)
+    // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
     showWindowControls: '',
 
-    // custom padding (css format, i.e.: `top right bottom left`)
+    // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: '12px 14px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
     colors: {
-      black: '#000000',
-      red: '#ff0000',
-      green: '#33ff00',
-      yellow: '#ffff00',
-      blue: '#0066ff',
-      magenta: '#cc00ff',
-      cyan: '#00ffff',
-      white: '#d0d0d0',
-      lightBlack: '#808080',
-      lightRed: '#ff0000',
-      lightGreen: '#33ff00',
-      lightYellow: '#ffff00',
-      lightBlue: '#0066ff',
-      lightMagenta: '#cc00ff',
-      lightCyan: '#00ffff',
-      lightWhite: '#ffffff'
+      black: '#0E1112',
+      red: '#CC3E44',
+      green: '#8DC149',
+      yellow: '#CBCB41',
+      blue: '#519ABA',
+      magenta: '#F55385',
+      cyan: '#7494A3',
+      white: '#D4D7D6',
+      lightBlack: '#4D5A5E',
+      lightRed: '#CC3E44',
+      lightGreen: '#8DC149',
+      lightYellow: '#CBCB41',
+      lightBlue: '#519ABA',
+      lightMagenta: '#F55385',
+      lightCyan: '#7494A3',
+      lightWhite: '#D4D7D6',
     },
+
+    // Default
+    backgroundColor: '#0E1112',
+    foregroundColor: '#BBBEBD',
+    cursorColor: '#BBBEBD',
+    borderColor: '#1B1E1F',
+    selectionColor: 'rgba(245, 245, 245, 0.3)',
+
+    // Accent color
+    accentColor: '#519ABA',
+
+    // Other
+    tabTitleColor: 'rgba(187, 190, 189, 0.2)',
+    selectedTabTitleColor: '#BBBEBD',
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -87,26 +90,29 @@ module.exports = {
     // Bash on Windows
     // - Example: `C:\\Windows\\System32\\bash.exe`
     //
-    // Powershell on Windows
+    // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
     shell: 'C:\\Windows\\System32\\wsl.exe',
 
-    // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
-    // by default ['--login'] will be used
+    // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
+    // by default `['--login']` will be used
     shellArgs: [],
 
     // for environment variables
     env: {},
 
-    // set to false for no bell
+    // set to `false` for no bell
     bell: 'SOUND',
 
-    // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
+    copyOnSelect: false,
 
-    // if true, on right click selected text will be copied or pasted if no
-    // selection is present (true by default on Windows)
-    // quickEdit: true
+    // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
+    defaultSSHApp: true,
+
+    // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
+    // selection is present (`true` by default on Windows and disables the context menu feature)
+    // quickEdit: true,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
@@ -120,7 +126,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-material-box', 'hyperlinks', 'hyper-transparent-dynamic'],
+  plugins: ['hyper-tabs-enhanced', 'hypercwd'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -130,5 +136,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  }
+  },
 };
