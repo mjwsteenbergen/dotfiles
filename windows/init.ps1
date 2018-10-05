@@ -37,4 +37,4 @@ if([System.IO.File]::Exists($dotfiles_path)){
 
 cmd.exe /C mklink C:\Users\%username%\.dotfiles\ $dotfiles_path /D
 
-choco install -y vscode --limit-output;
+choco install -y vscode --limit-output --params "/NoDesktopIcon";

@@ -46,9 +46,9 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advan
 # Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\Windows Search" "AllowCortana" 0
 
 # SysTray: Hide the Action Center, Network, and Volume icons
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCAHealth" 1  # Action Center
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCANetwork" 1 # Network
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCAVolume" 1  # Volume
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCAHealth" 0  # Action Center
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCANetwork" 0 # Network
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCAVolume" 0  # Volume
 #Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCAPower" 1  # Power
 
 # Taskbar: Show colors on Taskbar, Start, and SysTray: Disabled: 0, Taskbar, Start, & SysTray: 1, Taskbar Only: 2
@@ -179,20 +179,20 @@ Set-ItemProperty $_ "WindowAlpha"          0xF2
 
 # The 16 colors in the Console color well (Persisted values are in BGR).
 # Theme: Jellybeans
-Set-ItemProperty $_ "ColorTable00"         $(Convert-ConsoleColor "#151515") # Black (0)
-Set-ItemProperty $_ "ColorTable01"         $(Convert-ConsoleColor "#8197bf") # DarkBlue (1)
-Set-ItemProperty $_ "ColorTable02"         $(Convert-ConsoleColor "#437019") # DarkGreen (2)
-Set-ItemProperty $_ "ColorTable03"         $(Convert-ConsoleColor "#556779") # DarkCyan (3)
-Set-ItemProperty $_ "ColorTable04"         $(Convert-ConsoleColor "#902020") # DarkRed (4)
-Set-ItemProperty $_ "ColorTable05"         $(Convert-ConsoleColor "#540063") # DarkMagenta (5)
-Set-ItemProperty $_ "ColorTable06"         $(Convert-ConsoleColor "#dad085") # DarkYellow (6)
+Set-ItemProperty $_ "ColorTable00"         $(Convert-ConsoleColor "#0E1112") # Black (0)
+Set-ItemProperty $_ "ColorTable01"         $(Convert-ConsoleColor "#519ABA") # DarkBlue (1)
+Set-ItemProperty $_ "ColorTable02"         $(Convert-ConsoleColor "#8DC149") # DarkGreen (2)
+Set-ItemProperty $_ "ColorTable03"         $(Convert-ConsoleColor "#7494A3") # DarkCyan (3)
+Set-ItemProperty $_ "ColorTable04"         $(Convert-ConsoleColor "#CC3E44") # DarkRed (4)
+Set-ItemProperty $_ "ColorTable05"         $(Convert-ConsoleColor "#F55385") # DarkMagenta (5)
+Set-ItemProperty $_ "ColorTable06"         $(Convert-ConsoleColor "#CBCB41") # DarkYellow (6)
 Set-ItemProperty $_ "ColorTable07"         $(Convert-ConsoleColor "#888888") # Gray (7)
 Set-ItemProperty $_ "ColorTable08"         $(Convert-ConsoleColor "#606060") # DarkGray (8)
-Set-ItemProperty $_ "ColorTable09"         $(Convert-ConsoleColor "#7697d6") # Blue (9)
-Set-ItemProperty $_ "ColorTable10"         $(Convert-ConsoleColor "#99ad6a") # Green (A)
-Set-ItemProperty $_ "ColorTable11"         $(Convert-ConsoleColor "#c6b6ee") # Cyan (B)
-Set-ItemProperty $_ "ColorTable12"         $(Convert-ConsoleColor "#cf6a4c") # Red (C)
-Set-ItemProperty $_ "ColorTable13"         $(Convert-ConsoleColor "#f0a0c0") # Magenta (D)
-Set-ItemProperty $_ "ColorTable14"         $(Convert-ConsoleColor "#fad07a") # Yellow (E)
-Set-ItemProperty $_ "ColorTable15"         $(Convert-ConsoleColor "#e8e8d3") # White (F)
+Set-ItemProperty $_ "ColorTable09"         $(Convert-ConsoleColor "#0066ff") # Blue (9)
+Set-ItemProperty $_ "ColorTable10"         $(Convert-ConsoleColor "#8DC149") # Green (A)
+Set-ItemProperty $_ "ColorTable11"         $(Convert-ConsoleColor "#7494A3") # Cyan (B)
+Set-ItemProperty $_ "ColorTable12"         $(Convert-ConsoleColor "#CC3E44") # Red (C)
+Set-ItemProperty $_ "ColorTable13"         $(Convert-ConsoleColor "#F55385") # Magenta (D)
+Set-ItemProperty $_ "ColorTable14"         $(Convert-ConsoleColor "#CBCB41") # Yellow (E)
+Set-ItemProperty $_ "ColorTable15"         $(Convert-ConsoleColor "#D4D7D6") # White (F)
 }
