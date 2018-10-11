@@ -196,3 +196,11 @@ Set-ItemProperty $_ "ColorTable13"         $(Convert-ConsoleColor "#F55385") # M
 Set-ItemProperty $_ "ColorTable14"         $(Convert-ConsoleColor "#CBCB41") # Yellow (E)
 Set-ItemProperty $_ "ColorTable15"         $(Convert-ConsoleColor "#D4D7D6") # White (F)
 }
+
+rm "C:\Users\marti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk"
+
+$WshShell = New-Object -comObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("$env:UserProfile\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk")
+$Shortcut.TargetPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+$Shortcut.WorkingDirectory = "$env:UserProfile"
+$Shortcut.Save()

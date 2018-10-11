@@ -29,12 +29,11 @@ choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
 
 mkdir $env:UserProfile\Coding -Force
 
-$dotfiles_path = $env:UserProfile + "\Coding\dotfiles\"
+$dotfiles_path = "$env:UserProfile\Coding\dotfiles\"
 
-if([System.IO.File]::Exists($dotfiles_path)){
+if(![System.IO.File]::Exists($dotfiles_path)){
   git clone https://github.com/mjwsteenbergen/dotfiles.git $dotfiles_path
+  cmd.exe /C mklink C:\Users\%username%\.dotfiles\ $dotfiles_path /D
 }
-
-cmd.exe /C mklink C:\Users\%username%\.dotfiles\ $dotfiles_path /D
 
 choco install -y vscode --limit-output --params "/NoDesktopIcon";

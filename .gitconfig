@@ -1,5 +1,5 @@
 [winUpdater]
-	recentlySeenVersion = 2.19.0.windows.1
+	recentlySeenVersion = 2.19.1.windows.1
 [user]
 	name = Martijn Steenbergen
 	email = m.uses+git@outlook.com
@@ -10,3 +10,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[merge]
+    ff = no
