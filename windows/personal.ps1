@@ -155,7 +155,7 @@ Set-ItemProperty $_ "ScreenBufferSize"     0x0BB80078 # 3000h x 120w
 # Percentage of Character Space for Cursor: 25: Small, 50: Medium, 100: Large
 Set-ItemProperty $_ "CursorSize"           100
 # Name of display font
-Set-ItemProperty $_ "FaceName"             "Source Code Pro"
+Set-ItemProperty $_ "FaceName"             "Consolas"
 # Font Family: Raster: 0, TrueType: 54
 Set-ItemProperty $_ "FontFamily"           54
 # Dimensions of font character in pixels, not Points: 8-byte; 4b height, 4b width. 0: Auto
@@ -179,7 +179,7 @@ Set-ItemProperty $_ "WindowAlpha"          0xF2
 
 # The 16 colors in the Console color well (Persisted values are in BGR).
 # Theme: Jellybeans
-Set-ItemProperty $_ "ColorTable00"         $(Convert-ConsoleColor "#0E1112") # Black (0)
+Set-ItemProperty $_ "ColorTable00"         $(Convert-ConsoleColor "#000000") # Black (0)
 Set-ItemProperty $_ "ColorTable01"         $(Convert-ConsoleColor "#519ABA") # DarkBlue (1)
 Set-ItemProperty $_ "ColorTable02"         $(Convert-ConsoleColor "#8DC149") # DarkGreen (2)
 Set-ItemProperty $_ "ColorTable03"         $(Convert-ConsoleColor "#7494A3") # DarkCyan (3)

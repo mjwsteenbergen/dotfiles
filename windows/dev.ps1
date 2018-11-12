@@ -18,3 +18,4 @@ choco install -y jdk8                --limit-output;
 choco install -y docker              --limit-output;
 choco install -y postman             --limit-output;
 choco install -y jetbrainstoolbox    --limit-output;
+choco install -y vcxsrv              --limit-output;
