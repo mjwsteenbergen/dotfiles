@@ -15,7 +15,7 @@ choco install -y git-lfs.install     --limit-output;
 choco install -y dotnetcore-sdk      --limit-output;
 choco install -y sourcetree          --limit-output;
 choco install -y jdk8                --limit-output;
-choco install -y docker              --limit-output;
+choco install -y docker-for-windows  --limit-output;
 choco install -y postman             --limit-output;
 choco install -y jetbrainstoolbox    --limit-output;
 choco install -y vcxsrv              --limit-output;

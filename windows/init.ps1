@@ -29,7 +29,7 @@ choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
 
 mkdir $env:UserProfile\Coding -Force
 
-$dotfiles_path = "$env:UserProfile\Coding\dotfiles\"
+$dotfiles_path = "$env:UserProfile\Coding\.dotfiles\"
 
 if(![System.IO.File]::Exists($dotfiles_path)){
   git clone https://github.com/mjwsteenbergen/dotfiles.git $dotfiles_path

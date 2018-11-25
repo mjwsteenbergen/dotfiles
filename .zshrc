@@ -97,6 +97,8 @@ source ~/.dotfiles/transfer.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ufork="git fetch upstream && git checkout master && git rebase upstream/master && git push"
+
 eval `dircolors ~/.dir_colors`
 
 if [ -f ~/.local_settings ]; then

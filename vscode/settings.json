@@ -36,7 +36,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "breadcrumbs.enabled": false,
     "git.promptToSaveFilesBeforeCommit": true,
-    "editor.fontFamily": "Consolas Ligaturized, 'Courier New', monospace",
+    "editor.fontFamily": "Consolas Ligaturized, Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",

@@ -1,18 +1,16 @@
-mklink C:\Users\%username%\.dotfiles\ %cd% /D
-mklink C:\Users\%username%\.hyper.js C:\Users\%username%\.dotfiles\.hyper.js
-mklink %appdata%\Code\User C:\Users\%username%\.dotfiles\vscode /D
+mklink C:\Users\%username%\.hyper.js C:\Users\%username%\Coding\.dotfiles\.hyper.js
+rmdir %appdata%\Code\User /S /Q
+mklink %appdata%\Code\User C:\Users\%username%\Coding\.dotfiles\vscode /D
 rm C:\Users\%username%\.gitconfig
-mklink C:\Users\%username%\.gitconfig C:\Users\%username%\.dotfiles\.gitconfig
+mklink C:\Users\%username%\.gitconfig C:\Users\%username%\Coding\.dotfiles\.gitconfig
 
-for /d %%A in (C:\Users\marti\.IdeaIC20*) do (
+for /d %%A in (C:\Users\%username%\.IdeaIC20*) do (
     if exist "%%~fA" (
         rmdir "%%~fA"\config\keymaps
-        mklink /D "%%~fA"\config\keymaps C:\Users\%username%\.dotfiles\intellij\keymaps
+        mklink /D "%%~fA"\config\keymaps C:\Users\%username%\Coding\.dotfiles\intellij\keymaps
     )
 )
 
-set taskpath="C:\Users\marti\.dotfiles\windows\delete-downloads.cmd"
-
-SchTasks /Create /SC ONSTART /TN "Delete browser downloads" /TR %taskpath% /F
+SchTasks /Create /SC ONSTART /TN "Delete browser downloads" /TR "powershell -command C:\Users\%username%\Coding\.dotfiles\windows\delete-downloads.ps1" /F
 
 pause

@@ -12,3 +12,5 @@
 	required = true
 [merge]
     ff = no
+[core]
+	autocrlf = input
