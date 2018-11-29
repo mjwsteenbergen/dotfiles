@@ -37,3 +37,5 @@ if(![System.IO.File]::Exists($dotfiles_path)){
 }
 
 choco install -y vscode --limit-output --params "/NoDesktopIcon";
+
+git remote set-url origin git@github.com:mjwsteenbergen/dotfiles.git
