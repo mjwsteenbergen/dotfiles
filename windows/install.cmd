@@ -4,6 +4,9 @@ mklink %appdata%\Code\User C:\Users\%username%\Coding\.dotfiles\vscode /D
 rm C:\Users\%username%\.gitconfig
 mklink C:\Users\%username%\.gitconfig C:\Users\%username%\Coding\.dotfiles\.gitconfig
 
+rmdir /Q C:\Users\%username%\source\repos
+mklink C:\Users\%username%\source\repos\ C:\Users\%username%\Coding\ /D
+
 for /d %%A in (C:\Users\%username%\.IdeaIC20*) do (
     if exist "%%~fA" (
         rmdir "%%~fA"\config\keymaps
