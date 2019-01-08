@@ -16,7 +16,7 @@ function Refresh-Environment {
 
 function which($name) { Get-Command $name -ErrorAction SilentlyContinue | Select-Object Definition }
 
-### Chocolatey
+# Chocolatey
 Write-Host "Installing Desktop Utilities..." -ForegroundColor "Yellow"
 if ((which cinst) -eq $null) {
     iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')
@@ -24,7 +24,7 @@ if ((which cinst) -eq $null) {
     choco feature enable -n=allowGlobalConfirmation
 }
 
-#--- Git ---
+# Git 
 choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
 
 mkdir $env:UserProfile\Coding -Force
