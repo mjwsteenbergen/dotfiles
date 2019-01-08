@@ -6,6 +6,31 @@ function touch($file) { "" | Out-File $file -Encoding ASCII }
 function Edit-Hosts { Invoke-Expression "sudo $(if($env:EDITOR -ne $null)  {$env:EDITOR } else { 'notepad' }) $env:windir\system32\drivers\etc\hosts" }
 function Edit-Profile { Invoke-Expression "$(if($env:EDITOR -ne $null)  {$env:EDITOR } else { 'notepad' }) $profile" }
 
+function runCmd($command) {
+    cmd.exe /C $command
+}
+
+function makeSymbolicLinkFile($to, $from) {
+    if(-Not (Test-ReparsePoint $to)) {
+        runCmd "rm $to"
+        runCmd "mklink $to $from"
+    }   
+}
+
+function makeSymbolicLinkFolder($to, $from) {
+    if(-Not (Test-ReparsePoint $to)) {
+        runCmd "rmdir $to /S /Q"
+        runCmd "mklink $to $from /D"
+    }
+    
+}
+
+function Test-ReparsePoint([string]$path) {
+  $file = Get-Item $path -Force -ea SilentlyContinue
+  return [bool]($file.Attributes -band [IO.FileAttributes]::ReparsePoint)
+}
+
+
 # Sudo
 function sudo() {
     if ($args.Length -eq 1) {

@@ -11,6 +11,21 @@ if (!(Verify-Elevated)) {
 }
 
 ###############################################################################
+### Personal files                                                            #
+###############################################################################
+
+makeSymbolicLinkFile "$ENV:UserProfile\.gitconfig" "$ENV:UserProfile\Coding\.dotfiles\.gitconfig"
+makeSymbolicLinkFolder "$ENV:UserProfile\source\repos\" "$ENV:UserProfile\Coding\"
+makeSymbolicLinkFolder "$env:APPDATA\Code\User" "$ENV:UserProfile\Coding\.dotfiles\vscode"
+
+$files = ls -Path $ENV:UserProfile\.IdeaIC20*
+foreach ($file in $files){
+    makeSymbolicLinkFolder "$file\config\keymaps" "$ENV:UserProfile\Coding\.dotfiles\intellij\keymaps"
+}
+
+exit
+
+###############################################################################
 ### Explorer, Taskbar, and System Tray                                        #
 ###############################################################################
 Write-Host "Configuring Explorer, Taskbar, and System Tray..." -ForegroundColor "Yellow"
@@ -37,10 +52,6 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explo
 
 # Taskbar: Don't show Windows Store Apps on Taskbar
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "StoreAppsOnTaskbar" 0
-
-# Taskbar: Disable Bing Search
-# Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ConnectedSearch" "ConnectedSearchUseWeb" 0 # For Windows 8.1
-# Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" "BingSearchEnabled" 0 # For Windows 10
 
 # Taskbar: Disable Cortana
 # Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\Windows Search" "AllowCortana" 0
@@ -197,7 +208,7 @@ Set-ItemProperty $_ "ColorTable14"         $(Convert-ConsoleColor "#CBCB41") # Y
 Set-ItemProperty $_ "ColorTable15"         $(Convert-ConsoleColor "#D4D7D6") # White (F)
 }
 
-rm "C:\Users\marti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk"
+rm "$env:UserProfile\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk"
 
 $WshShell = New-Object -comObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut("$env:UserProfile\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk")
