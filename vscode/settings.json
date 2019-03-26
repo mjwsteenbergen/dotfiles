@@ -3,7 +3,7 @@
     "workbench.iconTheme": "vs-minimal",
     "editor.minimap.enabled": false,
     "git.autofetch": true,
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
     "files.autoSave": "onWindowChange",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": false,
@@ -16,8 +16,9 @@
     "workbench.activityBar.visible": true,
     "window.zoomLevel": 0,
     "cSpell.userWords": [
+        "Spotify",
         "lightbend",
-        "Spotify"
+        "reproducibility"
     ],
     "cSpell.logLevel": "None",
     "cSpell.showStatus": false,
@@ -44,4 +45,8 @@
     "zenMode.fullScreen": false,
     "zenMode.centerLayout": false,
     "markdownConverter.DestinationOrigin": "DocumentFile",
+    "markdown.preview.fontFamily": "\"Inter UI\", -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "markdown.preview.scrollEditorWithPreview": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "window.openFilesInNewWindow": "default",
 }

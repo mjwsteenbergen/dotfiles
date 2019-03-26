@@ -14,5 +14,11 @@
 	"description": "Log output to console"
 	}
 */
-	
+	"Personal style": {
+		"prefix": "personal-style",
+		"body": [
+			"<md-style url=\"https://gist.githubusercontent.com/mjwsteenbergen/6a0191730fc48674cdfa3ec6f1f908dc/raw/80f191a375727237c9beca328706154a5f841d7a/style.css\"></md-style>"
+		],
+		"description": "Add personal styles"
+	}
 }
