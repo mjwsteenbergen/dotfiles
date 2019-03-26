@@ -16,6 +16,9 @@ choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 # Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
 # Add-AppxPackage -Path ~/Ubuntu.appx
 
+## Databases
+choco install -y microsoftazurestorageexplorer --limit-output;
+
 choco install -y vcxsrv              --limit-output;
 
 ## Set HyperConfig

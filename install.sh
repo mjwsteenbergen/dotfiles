@@ -16,9 +16,9 @@ function link {
 
 
 link ~/.dotfiles/.zshrc ~/.zshrc
+link ~/.dotfiles/.bashrc ~/.bashrc
 link ~/.dotfiles/.nanorc ~/.nanorc
 link ~/.dotfiles/.dir_colors ~/.dir_colors
-rm ~/.gitconfig
 link ~/.dotfiles/.gitconfig ~/.gitconfig
 sudo ln -s ~/.dotfiles/doi2bib.sh /usr/local/bin/doi2bib
 
