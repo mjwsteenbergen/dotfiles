@@ -15,6 +15,7 @@ if (!(Verify-Elevated)) {
 ###############################################################################
 
 makeSymbolicLinkFile "$ENV:UserProfile\.gitconfig" "$ENV:UserProfile\Coding\.dotfiles\.gitconfig"
+makeSymbolicLinkFile "$ENV:UserProfile\.gitignore" "$ENV:UserProfile\Coding\.dotfiles\.gitignore"
 makeSymbolicLinkFolder "$ENV:UserProfile\source\repos\" "$ENV:UserProfile\Coding\"
 makeSymbolicLinkFolder "$env:APPDATA\Code\User" "$ENV:UserProfile\Coding\.dotfiles\vscode"
 
