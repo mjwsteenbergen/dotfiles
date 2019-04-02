@@ -26,6 +26,7 @@ if ((which cinst) -eq $null) {
 
 # Git 
 choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
+Refresh-Environment
 
 mkdir $env:UserProfile\Coding -Force
 
@@ -33,6 +34,7 @@ $dotfiles_path = "$env:UserProfile\Coding\.dotfiles\"
 
 if(![System.IO.File]::Exists($dotfiles_path)){
   git clone https://github.com/mjwsteenbergen/dotfiles.git $dotfiles_path
+  git config --global core.excludesfile "%USERPROFILE%\.gitignore"
   cmd.exe /C mklink C:\Users\%username%\.dotfiles\ $dotfiles_path /D
 }
 
