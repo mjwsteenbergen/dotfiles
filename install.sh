@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Install
-sudo apt-get install zsh htop maven curl
+sudo apt-get install zsh htop curl zip
 
 chsh -s $(which zsh)
 
@@ -24,3 +24,6 @@ sudo ln -s ~/.dotfiles/doi2bib.sh /usr/local/bin/doi2bib
 
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zdharma/fast-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/fast-syntax-highlighting
+git clone https://github.com/lukechilds/zsh-better-npm-completion $HOME/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
+git clone https://github.com/djui/alias-tips.git $HOME/.oh-my-zsh/custom/plugins/alias-tips
+sudo chmod -R 755 $HOME/.oh-my-zsh/custom/plugins/

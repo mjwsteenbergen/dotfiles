@@ -56,6 +56,7 @@ ZSH_THEME="gentoo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  colored-man-pages
   gitfast
   command-not-found
   docker
@@ -63,6 +64,8 @@ plugins=(
   zsh-autosuggestions
   fast-syntax-highlighting
   gitignore
+  zsh-better-npm-completion
+  alias-tips
 )
 
 source $ZSH/oh-my-zsh.sh
