@@ -40,7 +40,6 @@
     "editor.fontFamily": "Consolas Ligaturized, Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "window.menuBarVisibility": "toggle",
-    "window.titleBarStyle": "native",
     "window.title": "${rootName}${separator}${dirty}${activeEditorMedium}",
     "zenMode.fullScreen": false,
     "zenMode.centerLayout": false,
@@ -49,4 +48,5 @@
     "markdown.preview.scrollEditorWithPreview": false,
     "liveServer.settings.donotShowInfoMsg": true,
     "window.openFilesInNewWindow": "default",
+    "workbench.panel.defaultLocation": "right",
 }

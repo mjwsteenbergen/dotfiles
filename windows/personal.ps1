@@ -10,21 +10,6 @@ if (!(Verify-Elevated)) {
    exit
 }
 
-###############################################################################
-### Personal files                                                            #
-###############################################################################
-
-makeSymbolicLinkFile "$ENV:UserProfile\.gitconfig" "$ENV:UserProfile\Coding\.dotfiles\.gitconfig"
-makeSymbolicLinkFile "$ENV:UserProfile\.gitignore" "$ENV:UserProfile\Coding\.dotfiles\.gitignore"
-makeSymbolicLinkFolder "$ENV:UserProfile\source\repos\" "$ENV:UserProfile\Coding\"
-makeSymbolicLinkFolder "$env:APPDATA\Code\User" "$ENV:UserProfile\Coding\.dotfiles\vscode"
-
-$files = ls -Path $ENV:UserProfile\.IdeaIC20*
-foreach ($file in $files){
-    makeSymbolicLinkFolder "$file\config\keymaps" "$ENV:UserProfile\Coding\.dotfiles\intellij\keymaps"
-}
-
-exit
 
 ###############################################################################
 ### Explorer, Taskbar, and System Tray                                        #
