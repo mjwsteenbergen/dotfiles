@@ -4,3 +4,8 @@ Host samaritan
     Port 8235
     User martijn
     IdentityFile ~/.ssh/id_rsa
+
+Host mos-develop
+    HostName mos-develop.flying-fish.tech
+    User root
+    IdentityFile ~/.ssh/flying-fish

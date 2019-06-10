@@ -101,6 +101,8 @@ source ~/.dotfiles/transfer.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ufork="git fetch upstream && git checkout master && git rebase upstream/master && git push"
+alias git-tree="git log --graph --oneline --all"
+alias gsc="git stash && git checkout $1 && git stash pop"
 
 eval `dircolors ~/.dir_colors`
 

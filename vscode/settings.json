@@ -5,6 +5,7 @@
     "git.autofetch": true,
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
     "files.autoSave": "onWindowChange",
+    "files.defaultLanguage": "markdown",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": false,
     "prettier.singleQuote": true,
@@ -49,4 +50,12 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "window.openFilesInNewWindow": "default",
     "workbench.panel.defaultLocation": "right",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "terminal.integrated.rendererType": "canvas",
+    "emojisense.markupCompletionsEnabled": false,
 }

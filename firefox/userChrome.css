@@ -1,0 +1,313 @@
+#urlbar,
+.searchbar-textbox,
+#urlbar:hover,
+.searchbar-textbox:hover {
+    background: #333 !important;
+    color: white !important;
+    height: 36px !important;
+    padding: 0 10px !important;
+    font-size: 1.1em !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: 0 0 0;
+    border: 0 solid transparent !important;
+    -moz-appearance: none;
+    margin: 0px 0px !important;
+    /*! min-height: 30px !important; */
+    cursor: default;
+}
+
+toolbox {
+    background-color: #000 !important;
+    color: #AAAAAA;
+}
+
+#home-button,
+#library-button,
+/* #downloads-button, */
+#sidebar-button,
+#star-button,
+#pocket-button-box,
+#forward-button,
+#alltabs-button,
+.titlebar-spacer,
+.urlbar-icon.urlbar-page-action {
+    display: none !important;
+}
+
+#appMenu-fxa-container,
+
+/* Sign in to Sync */
+
+#appMenu-fxa-container+toolbarseparator,
+
+/* #appMenuRestoreLastSession, */
+
+#appMenu-zoom-controls,
+#appMenu-zoom-controls+toolbarseparator,
+#appMenu-edit-controls,
+#appMenu-edit-controls+toolbarseparator,
+#appMenu-library-button,
+#appMenu-customize-button,
+#appMenu-customize-button+toolbarseparator,
+#appMenu-open-file-button,
+#appMenu-save-file-button,
+#appMenu-find-button,
+#appMenu-more-button,
+
+/* URL Bar */
+#urlbar[focused="true"],
+#urlbar:hover, .searchbar-textbox:hover {
+    box-shadow: 0 0 0 !important;
+    border: 0 solid transparent !important;
+}
+
+
+
+/* Back button */
+
+#back-button .toolbarbutton-icon {
+    /*! transform: scale(0.9, 0.9) !important; */
+    margin-left: -2px !important;
+    margin-right: -2px !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;;
+    border: none;
+}
+
+#back-button, #reload-button {
+    border-radius: 0 !important;
+    padding-right: 3px !important;
+}
+
+/* Stop reload */
+
+#stop-button .toolbarbutton-icon {
+    transform: scale(0.8, 0.8) !important;
+}
+
+#reload-button, #stop-button {
+    background: #333;
+    width: 35px;
+}
+
+#urlbar-container:hover #nav-bar-overflow-button {
+    display: none !important;
+}
+
+/* Buttons */
+xul:toolbarbutton {
+    border-radius: initial !important;
+}
+
+toolbarbutton:hover {
+    background-color: var(--toolbarbutton-hover-background);
+}
+
+toolbarbutton[open="true"] {
+    background-color: var(--toolbarbutton-hover-background);
+}
+
+#PersonalToolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover, .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled="true"]):hover, .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled="true"]):hover, .findbar-button:not(:-moz-any([checked="true"], [disabled="true"])):hover, toolbarbutton.bookmark-item:not(.subviewbutton):hover:not([disabled="true"]):not([open]), toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon, toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-text, toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {
+	background-color: transparent !important;
+}
+
+#PersonalToolbar .toolbarbutton-1:not([disabled="true"]):-moz-any([open], [checked], :hover:active), .findbar-button:not([disabled="true"]):-moz-any([checked="true"], :hover:active), toolbarbutton.bookmark-item:not(.subviewbutton):hover:active:not([disabled="true"]), toolbarbutton.bookmark-item[open="true"], toolbar .toolbarbutton-1:not([disabled="true"]):-moz-any([open], [checked], :hover:active) > .toolbarbutton-icon, toolbar .toolbarbutton-1:not([disabled="true"]):-moz-any([open], [checked], :hover:active) > .toolbarbutton-text, toolbar .toolbarbutton-1:not([disabled="true"]):-moz-any([open], [checked], :hover:active) > .toolbarbutton-badge-stack {
+	background-color: transparent !important;
+}
+
+.toolbarbutton-icon {
+    border-color: transparent !important;
+}
+
+.chromeclass-toolbar-additional .toolbarbutton-icon {
+    background-color:  transparent !important;
+}
+
+.toolbarbutton-1:hover {
+    background-color: var(--toolbarbutton-hover-background) !important;
+}
+
+#urlbar[pageproxystate="invalid"] #identity-icon {
+    display: none;
+}
+
+#navigator-toolbox::after {
+    border-bottom: none !important;
+}
+
+/* Large window */
+
+/* @media(min-width: 100em) { */
+:root:-moz-any([inFullscreen], [tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme) { -moz-appearance: none !important; }
+    
+    #navigator-toolbox {
+        height: 33px;
+    }
+    
+    .tab-text {
+        /* display: */
+    }
+    
+    /*Oneliner */
+    #TabsToolbar {
+        background-color: #000000 !important;
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        margin-left: 35px !important;
+/*         margin-right: 0px !important; */
+        z-index: 2;
+    }
+    
+    #tabbrowser-tabs {
+/*         max-width: 40vw !important; */
+    }
+    
+    #nav-bar {
+/*         margin-bottom: -4px !important; */
+        margin-top: -34px !important;
+/*         margin-left: 70vw !important; */
+        margin-right: calc(100vw - 35px) !important;    
+        position: relative;
+        margin-right: 138px;
+        border-top: none !important;
+        max-height: 34px;
+        background-color: black !important;
+        transition: margin-right 0.2s cubic-bezier(0.77, 0, 0.175, 1) !important;
+        z-index: 10 !important;
+/*         transition-timing-function: ease;
+        transition-duration: 5s;
+        transition-property: margin-right, margin-left !important; */
+    }
+    
+    
+    
+    #nav-bar:focus-within, #nav-bar:hover {
+/*             margin-right: 0px !important; */
+        margin-right: 138px !important; /* browser controls */
+        margin-left: 0vw !important;
+        visibility: visible;
+
+/*         animation-duration: 0.5s; */
+/*         animation-name: slidein; */
+/*         animation-direction: reverse; */
+    }
+    
+    /* hover */
+    
+    #downloads-button, #nav-bar-overflow-button, #PanelUI-button, #nav-bar {
+        background-color: #333;
+    }
+    
+    #downloads-button,
+    .urlbar-history-dropmarker {
+        display: none;
+    }
+    
+    #downloads-button[attention="success"], #downloads-button[progress="true"] {
+        display: inherit;
+    }
+    
+    #reload-button {
+/*         display: none; */
+    }
+    
+    #nav-bar-overflow-button {
+        display: none !important;
+    }
+    
+    #nav-bar:focus-within #nav-bar-overflow-button {
+        display: inherit !important;
+    }
+    
+    #PanelUI-button {
+        margin: 0 !important;
+        border: none !important;
+        display: none;
+    }
+    
+    #nav-bar:focus-within #PanelUI-button {
+        display: inherit;   
+    }
+    
+    
+    #pageActionSeparator {
+        display: none;
+    }
+
+    
+    #reload-button {
+        display: none;
+    }
+    
+    
+    #urlbar {
+/*         margin-right: 65vw !important;     */
+        /*! z-index: -1 !important; */
+    }
+    
+    #urlbar:not(.hidden-focus)[focused="true"] {
+        
+    }
+    
+    /*  Secure    */
+    #identity-box {
+/*         display: none; */
+        margin-left: -17px;
+    }
+    
+    toolbarbutton[open="true"] {
+        display: revert !important;;
+    }
+    
+    toolbarbutton[open="true"] {
+        display: revert !important;;
+    }
+    
+    #identity-box[open="true"] {
+/*         display: revert; */
+    }
+
+
+    #nav-bar:hover #identity-box {
+/*         display: revert !important;; */
+    }
+    
+    #back-button .toolbarbutton-icon {
+        transform: scale(1.2, 1.2) !important;
+    }
+    
+    #stop-reload-button .toolbarbutton-icon {
+         transform: scale(0.8, 0.8) !important;
+    }
+
+    #stop-reload-button:not([animate="true"]) ~ #back-button[disabled=true] {
+/*         display: none; */
+    }
+    
+    #back-button {
+        background-color: #333 !important;
+        opacity: 1 !important;
+    }
+    
+    #back-button:hover {
+        background-color: #333 !important;
+    }
+    
+    
+    #back-button[disabled=true] .toolbarbutton-icon {
+        visibility: hidden !important;
+    }
+
+    #urlbar-container {
+        margin-left: -10px;
+    }
+    
+    #nav-bar #urlbar-container {
+        margin-left: 0px;
+    }
+
+    
+    
+    
+/* } */
