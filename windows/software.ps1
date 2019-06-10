@@ -1,23 +1,16 @@
-function Refresh-Environment {
-    $locations = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment',
-                 'HKCU:\Environment'
-
-    $locations | ForEach-Object {
-        $k = Get-Item $_
-        $k.GetValueNames() | ForEach-Object {
-            $name  = $_
-            $value = $k.GetValue($_)
-            Set-Item -Path Env:\$name -Value $value
-        }
-    }
-
-    $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-}
+. ./functions
 
 # browsers
 choco install -y GoogleChrome        --limit-output;
 choco install -y chromium            --limit-output;
 choco install -y firefox-dev   --pre --limit-output;
+
+# Firefox settings
+$files = ls -Path $ENV:APPDATA\Mozilla\Firefox\Profiles\*
+foreach ($file in $files){
+    makeSymbolicLinkFile "$file\user.js" "$ENV:UserProfile\Coding\.dotfiles\firefox\user.js"
+    makeSymbolicLinkFile "$file\chrome\userChrome.css" "$ENV:UserProfile\Coding\.dotfiles\firefox\userChrome.css"
+}
 
 # Software
 choco install -y vlc                 --limit-output;

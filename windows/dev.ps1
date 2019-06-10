@@ -40,9 +40,6 @@ choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 # Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
 # Add-AppxPackage -Path ~/Ubuntu.appx
 
-## Databases
-choco install -y microsoftazurestorageexplorer --limit-output;
-
 choco install -y vcxsrv              --limit-output;
 
 ## Set HyperConfig
@@ -59,5 +56,8 @@ choco install -y jetbrainstoolbox    --limit-output;
 # Windows development
 makeSymbolicLinkFolder "$ENV:UserProfile\source\repos\" "$ENV:UserProfile\Coding\"
 choco install -y dotnetcore-sdk      --limit-output;
+
+
+Enable-WindowsOptionalFeature -Online -FeatureName containers -All
 choco install -y Microsoft-Hyper-V-All -source windowsFeatures
 choco install -y docker-for-windows  --limit-output;

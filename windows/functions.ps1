@@ -12,7 +12,9 @@ function runCmd($command) {
 
 function makeSymbolicLinkFile($to, $from) {
     if(-Not (Test-ReparsePoint $to)) {
-        runCmd "rm $to"
+        if(![System.IO.File]::Exists($to)){
+            runCmd "rm $to"
+        }
         runCmd "mklink $to $from"
     }   
 }
