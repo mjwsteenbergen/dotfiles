@@ -19,7 +19,7 @@ if(![System.IO.File]::Exists($dotfiles_path)){
 Invoke-WebRequest -Uri "https://update.code.visualstudio.com/latest/win32-x64-user/stable" -OutFile $env:UserProfile\Desktop\vscode.exe
  
 #REM Install and run VSCode
-C:\Users\$env:USERNAME\Desktop\vscode.exe /verysilent /suppressmsgboxes
+Start-Process C:\Users\${env:USERNAME}\Desktop\vscode.exe  -ArgumentList "/verysilent /suppressmsgboxes" -Wait -NoNewWindow 
 
 Remove-Item $env:UserProfile\Desktop\vscode.exe
 
