@@ -2,7 +2,6 @@
 
 # Base
 choco install -y git-lfs.install     --limit-output;
-choco install -y sourcetree          --limit-output;
 
 # Enable Developer Mode
 Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" "AllowDevelopmentWithoutDevLicense" 1
@@ -21,11 +20,14 @@ if((Test-Path -Path "$env:APPDATA\Code - Insiders" )){
 makeSymbolicLinkFile "$ENV:UserProfile\.gitconfig" "$ENV:UserProfile\Coding\.dotfiles\.gitconfig"
 makeSymbolicLinkFile "$ENV:UserProfile\.gitignore" "$ENV:UserProfile\Coding\.dotfiles\.gitignore"
 
+# choco install -y sourcetree          --limit-output;
+
 ## SSH
+mkdir $env:UserProfile\.ssh
 makeSymbolicLinkFile "$ENV:UserProfile\.ssh\config" "$ENV:UserProfile\Coding\.dotfiles\ssh-config"
+ssh-keygen -P -C -f $env:UserProfile\.ssh\id_rsa
 
 ## IntelliJ
-
 $files = ls -Path $ENV:UserProfile\.IdeaIC20*
 foreach ($file in $files){
     makeSymbolicLinkFolder "$file\config\keymaps" "$ENV:UserProfile\Coding\.dotfiles\intellij\keymaps"
