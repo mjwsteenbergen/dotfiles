@@ -22,11 +22,6 @@ function executeScript {
 
 #--- Execute Scripts ---
 executeScript "setup-dotfiles.ps1";
-executeScript "remove-default-apps.ps1";
-executeScript "privacy.ps1";
-executeScript "dev.ps1";
-executeScript "software.ps1";
-executeScript "personal.ps1";
 
 Update-SessionEnvironment
 
