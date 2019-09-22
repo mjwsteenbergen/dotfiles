@@ -202,6 +202,9 @@ $Shortcut.TargetPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.ex
 $Shortcut.WorkingDirectory = "$env:UserProfile"
 $Shortcut.Save()
 
+#AutoHotkey
+choco install autohotkey
+
 $files = ls -Path .\Autohotkey\*
 foreach ($file in $files) {
     Write-Host "$file"
