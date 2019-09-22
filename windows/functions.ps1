@@ -10,21 +10,20 @@ function runCmd($command) {
     cmd.exe /C $command
 }
 
-function makeSymbolicLinkFile($to, $from) {
-    if(-Not (Test-ReparsePoint $from)) {
-        if([System.IO.File]::Exists($from)){
-            runCmd "rm $from"
+function makeSymbolicLinkFile($linkPath, $source) {
+    if (-Not (Test-ReparsePoint $linkPath)) {
+        if ([System.IO.File]::Exists($linkPath)) {
+            runCmd "rm $linkPath"
         }
-        runCmd "mklink $to $from"
+        runCmd "mklink $linkPath $source"
     }   
 }
 
-function makeSymbolicLinkFolder($to, $from) {
-    if(-Not (Test-ReparsePoint $to)) {
-        runCmd "rmdir $to /S /Q"
-        runCmd "mklink $to $from /D"
+function makeSymbolicLinkFolder($linkPath, $source) {
+    if (-Not (Test-ReparsePoint $linkPath)) {
+        runCmd "rmdir $linkPath /S /Q"
+        runCmd "mklink $linkPath $source /D"
     }
-    
 }
 
 function Test-ReparsePoint([string]$path) {

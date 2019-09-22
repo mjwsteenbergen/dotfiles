@@ -23,13 +23,12 @@ makeSymbolicLinkFile "$ENV:UserProfile\.gitignore" "$ENV:UserProfile\Coding\.dot
 # choco install -y sourcetree          --limit-output;
 
 ## SSH
-mkdir $env:UserProfile\.ssh
-makeSymbolicLinkFile "$ENV:UserProfile\.ssh\config" "$ENV:UserProfile\Coding\.dotfiles\ssh-config"
-
 # Create SSH key if none exist
-if (!(Test-Path "$env:UserProfile\.ssh\id_rsa")) {
-    ssh-keygen -P -C -f $env:UserProfile\.ssh\id_rsa
+if (!(Test-Path "$env:UserProfile\.ssh")) {
+    mkdir $env:UserProfile\.ssh
+    ssh-keygen -f $env:UserProfile\.ssh\id_rsa -t rsa -N '""'
 }
+makeSymbolicLinkFile "$ENV:UserProfile\.ssh\config" "$ENV:UserProfile\Coding\.dotfiles\ssh-config"
 
 ## IntelliJ
 $files = ls -Path $ENV:UserProfile\.IdeaIC20*
