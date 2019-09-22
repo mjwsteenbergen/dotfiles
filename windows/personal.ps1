@@ -201,3 +201,10 @@ $Shortcut = $WshShell.CreateShortcut("$env:UserProfile\AppData\Roaming\Microsoft
 $Shortcut.TargetPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 $Shortcut.WorkingDirectory = "$env:UserProfile"
 $Shortcut.Save()
+
+$files = ls -Path .\Autohotkey\*
+foreach ($file in $files) {
+    Write-Host "$file"
+
+    makeSymbolicLinkFile """$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\$((Get-Item $file).Name)""" "$file"
+}
