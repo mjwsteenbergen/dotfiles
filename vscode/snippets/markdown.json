@@ -1,5 +1,5 @@
 {
-/*
+	/*
 		// Place your snippets for Markdown here. Each snippet is defined under a snippet name and has a prefix, body and 
 		// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 		// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
@@ -17,7 +17,42 @@
 	"Personal style": {
 		"prefix": "personal-style",
 		"body": [
-			"<md-style url=\"https://gist.githubusercontent.com/mjwsteenbergen/6a0191730fc48674cdfa3ec6f1f908dc/raw/80f191a375727237c9beca328706154a5f841d7a/style.css\"></md-style>"
+			"<md-style url=\"https://gist.githubusercontent.com/mjwsteenbergen/6a0191730fc48674cdfa3ec6f1f908dc/raw/40431b69ac513aa7d622a60dc18541eb19864227/style.css\"></md-style>"
+		],
+		"description": "Add personal styles"
+	},
+	"Review style": {
+		"prefix": "style-review",
+		"body": [
+			"<md-style url=\"https://gist.githubusercontent.com/mjwsteenbergen/40e3ea29ebf25bfb4eaa2c34f3fe218a/raw/639ca111136af43217331d9613d1ac8bfff5efe7/style.css\"></md-style>"
+		],
+		"description": "Add review styles"
+	},
+	"Gantt": {
+		"prefix": "gantt",
+		"body": [
+			"```mermaid",
+			"gantt",
+			"\ttitle A Gantt Diagram",
+			"\tdateFormat  YYYY-MM-DD",
+			"\tsection Section",
+			"\tA task           :a1, 2014-01-01, 30d",
+			"\tAnother task :after a1, 20d",
+			"```"
+		],
+		"description": "Add personal styles"
+	},
+	"Paper": {
+		"prefix": "paper",
+		"body": [
+			"# ${1:title} [${2:ref-id}]",
+			"**Year:** $3",
+			"",
+			"## Summary",
+			" - $0",
+			"## Quotes",
+			" - ",
+			"",
 		],
 		"description": "Add personal styles"
 	}

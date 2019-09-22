@@ -11,7 +11,7 @@ function link {
 	ln -s $1 $2
 }
 
-link /mnt/c/Users/martijn/Coding/ ~/coding
+link /mnt/c/Users/$USER/Coding/ ~/coding
 
 sudo chmod -R 600 ~/.ssh/*
 

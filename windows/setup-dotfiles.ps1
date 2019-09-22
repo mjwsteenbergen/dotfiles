@@ -16,7 +16,7 @@ if(![System.IO.File]::Exists($dotfiles_path)){
 }
 
 #REM Download VSCode
-curl -L "https://update.code.visualstudio.com/latest/win32-x64-user/stable" --output $env:UserProfile\Desktop\vscode.exe
+Invoke-WebRequest -Uri "https://update.code.visualstudio.com/latest/win32-x64-user/stable" -OutFile $env:UserProfile\Desktop\vscode.exe
  
 #REM Install and run VSCode
 C:\Users\$env:USERNAME\Desktop\vscode.exe /verysilent /suppressmsgboxes
