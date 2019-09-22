@@ -25,7 +25,11 @@ makeSymbolicLinkFile "$ENV:UserProfile\.gitignore" "$ENV:UserProfile\Coding\.dot
 ## SSH
 mkdir $env:UserProfile\.ssh
 makeSymbolicLinkFile "$ENV:UserProfile\.ssh\config" "$ENV:UserProfile\Coding\.dotfiles\ssh-config"
-ssh-keygen -P -C -f $env:UserProfile\.ssh\id_rsa
+
+# Create SSH key if none exist
+if (!(Test-Path "$env:UserProfile\.ssh\id_rsa")) {
+    ssh-keygen -P -C -f $env:UserProfile\.ssh\id_rsa
+}
 
 ## IntelliJ
 $files = ls -Path $ENV:UserProfile\.IdeaIC20*
