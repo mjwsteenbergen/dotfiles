@@ -24,7 +24,7 @@
 	"Review style": {
 		"prefix": "style-review",
 		"body": [
-			"<md-style url=\"https://gist.githubusercontent.com/mjwsteenbergen/40e3ea29ebf25bfb4eaa2c34f3fe218a/raw/639ca111136af43217331d9613d1ac8bfff5efe7/style.css\"></md-style>"
+			"<md-style url=\"https://gist.githubusercontent.com/mjwsteenbergen/40e3ea29ebf25bfb4eaa2c34f3fe218a/raw/1d1668a6a5b615a6974201272d0829491e54c3d5/style.css\"></md-style>"
 		],
 		"description": "Add review styles"
 	},

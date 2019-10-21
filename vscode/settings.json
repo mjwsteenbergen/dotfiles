@@ -1,15 +1,20 @@
 {
     "extensions.ignoreRecommendations": false,
     "workbench.iconTheme": "vs-minimal",
+    "workbench.colorCustomizations": {
+        "[Default Light+]": {
+            "titleBar.activeBackground": "#252526",
+            "titleBar.activeForeground": "#CCC",
+        }
+    },
     "editor.minimap.enabled": false,
     "git.autofetch": true,
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
-    "files.autoSave": "onWindowChange",
+    "files.autoSave": "onFocusChange",
     "files.defaultLanguage": "markdown",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": false,
     "prettier.singleQuote": true,
-    "workbench.colorTheme": "Default Light+",
     "azure.resourceFilter": [
         "b196ecbd-2dd0-4616-8f71-aae4492dd2e6/4d106790-62cc-4e59-8ec0-cec5344d206f"
     ],
@@ -58,4 +63,23 @@
     },
     "terminal.integrated.rendererType": "canvas",
     "emojisense.markupCompletionsEnabled": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.detectSubmodulesLimit": 20,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "terminal.integrated.fontFamily": "Cascadia Code",
+    "workbench.colorTheme": "Default Light+",
 }
