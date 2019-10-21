@@ -19,22 +19,37 @@
 
     #urlbar-container {
         margin-left: -10px;
+        min-width: 0px !important;
+        margin: 0 !important;
     }
-    
+
+    #urlbar-container ~ toolbarbutton {
+        visibility: collapse;
+    }
+
+    #nav-bar-customization-target + * {
+        visibility: collapse;    
+    }
+
+    #nav-bar:focus-within toolbarbutton, #nav-bar:hover toolbarbutton {
+        visibility: visible;
+    }
+
+
     #nav-bar #urlbar-container {
         margin-left: 0px;
     }
 
     #PanelUI-button, #nav-bar-overflow-button {
-        display: none !important;;
+        visibility: collapse;  
     }
     
     #nav-bar:focus-within #PanelUI-button {
-        display: inherit !important;;   
+        visibility: visible;   
     }
 
     #nav-bar:focus-within #nav-bar-overflow-button {
-        display: inherit !important;;   
+        visibility: visible;
     }
 
 /* Keep toolbar open after opening     */
