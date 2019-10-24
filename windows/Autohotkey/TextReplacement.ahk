@@ -1,6 +1,7 @@
 
 #SingleInstance force
 
+::gr::Groeten,
 ::hagd::Have a great day,
 ::idd::inderdaad
 ::idk::I don't know

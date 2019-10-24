@@ -1,4 +1,4 @@
-user_pref("browser.download.dir", "C:\\Users\\martijn\\Downloads\\Browser");
+user_pref("browser.download.dir", "C:\\Users\\%username%\\Downloads\\Browser");
 
 
 // gamepad API: what is W3C smoking??? Seriously, there is a unhealthy passion
@@ -17,6 +17,7 @@ user_pref("dom.vr.enabled", false);
 // I use duckduckgo as it is reasonably complete and the least invasive as far
 // as we know
 // Replace by your favorite
+user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.geoSpecificDefaults", false);
 user_pref("browser.search.order.1", "DuckDuckGo");
@@ -56,3 +57,4 @@ user_pref("devtools.toolbox.host", "window");
 // userChrome editing
 user_pref("devtools.chrome.enabled", true);
 user_pref("devtools.debugger.remote-enabled", true);
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);

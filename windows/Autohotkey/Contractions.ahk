@@ -17,7 +17,7 @@
 ::hed::he'd
 ; ::hell::he'll ; ambiguous
 ::hes::he's
-::Id::I'd
+; ::Id::I'd ; ambiguous
 ::Ill::I'll
 ::Im::I'm
 ::Ive::I've

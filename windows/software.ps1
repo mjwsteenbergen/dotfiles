@@ -9,6 +9,7 @@ choco install -y firefox-dev   --pre --limit-output;
 $files = ls -Path $ENV:APPDATA\Mozilla\Firefox\Profiles\*
 foreach ($file in $files){
     makeSymbolicLinkFile "$file\user.js" "$ENV:UserProfile\Coding\.dotfiles\firefox\user.js"
+    mkdir "$file\chrome"
     makeSymbolicLinkFile "$file\chrome\userChrome.css" "$ENV:UserProfile\Coding\.dotfiles\firefox\userChrome.css"
 }
 

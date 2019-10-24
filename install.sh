@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Install
+sudo apt-get update
 sudo apt-get install zsh htop curl zip
 
 chsh -s $(which zsh)

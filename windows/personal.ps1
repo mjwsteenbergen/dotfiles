@@ -202,7 +202,11 @@ $Shortcut.TargetPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.ex
 $Shortcut.WorkingDirectory = "$env:UserProfile"
 $Shortcut.Save()
 
-#AutoHotkey
+
+###############################################################################
+### AutoHotkey                                                                #
+###############################################################################
+
 choco install autohotkey
 
 $files = ls -Path .\Autohotkey\*
@@ -211,3 +215,10 @@ foreach ($file in $files) {
 
     makeSymbolicLinkFile """$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\$((Get-Item $file).Name)""" "$file"
 }
+
+###############################################################################
+### Fonts                                                                     #
+###############################################################################
+
+$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
+dir ../fonts/*.otf | % { $fonts.CopyHere($_.fullname) }
