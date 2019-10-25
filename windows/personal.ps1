@@ -221,4 +221,10 @@ foreach ($file in $files) {
 ###############################################################################
 
 $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
-dir ../fonts/*.otf | % { $fonts.CopyHere($_.fullname) }
+$newFonts = dir ../font/*.otf
+
+foreach ($newFont in $newFonts) {
+    if (![System.IO.File]::Exists("$fonts.Self().Path()\$newFont")) {
+        $fonts.CopyHere($newFont.fullname)
+    }
+}
