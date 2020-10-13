@@ -26,7 +26,7 @@ makeSymbolicLinkFile "$ENV:UserProfile\.gitignore" "$ENV:UserProfile\Coding\.dot
 # Create SSH key if none exist
 if (!(Test-Path "$env:UserProfile\.ssh")) {
     mkdir $env:UserProfile\.ssh
-    ssh-keygen -f $env:UserProfile\.ssh\id_rsa -t rsa -N '""'
+    ssh-keygen -f $env:UserProfile\.ssh\id_rsa -t ed25519 -N '""'
 }
 makeSymbolicLinkFile "$ENV:UserProfile\.ssh\config" "$ENV:UserProfile\Coding\.dotfiles\ssh-config"
 
