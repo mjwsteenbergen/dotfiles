@@ -69,7 +69,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.dotfiles/transfer.sh
 
 # User configuration
 
