@@ -9,10 +9,10 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Consolas, "Cascadia Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -20,17 +20,45 @@ module.exports = {
     // font weight for bold characters: 'normal' or 'bold'
     fontWeightBold: 'bold',
 
+    // line height as a relative unit
+    lineHeight: 1,
+
+    // letter spacing as a relative unit
+    letterSpacing: 0,
+
+    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
+    cursorColor: 'rgba(248,28,229,0.8)',
+
+    // terminal text color under BLOCK cursor
+    cursorAccentColor: '#000',
+
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
     cursorShape: 'BLOCK',
 
     // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: false,
 
+    // color of the text
+    foregroundColor: '#fff',
+
+    // terminal background color
+    // opacity is only supported on macOS
+    backgroundColor: '#000',
+
+    // terminal selection color
+    selectionColor: 'rgba(248,28,229,0.3)',
+
+    // border color (window, tabs)
+    borderColor: '#333',
+
     // custom CSS to embed in the main window
     css: '',
 
     // custom CSS to embed in the terminal window
     termCSS: '',
+
+    // set custom startup directory (must be an absolute path)
+    workingDirectory: '',
 
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
@@ -42,7 +70,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+    padding: '5px 14px 12px 14px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -64,21 +92,9 @@ module.exports = {
       lightMagenta: '#F55385',
       lightCyan: '#7494A3',
       lightWhite: '#D4D7D6',
+      limeGreen: '#32CD32',
+      lightCoral: '#F08080',
     },
-
-    // Default
-    backgroundColor: '#0E1112',
-    foregroundColor: '#BBBEBD',
-    cursorColor: '#BBBEBD',
-    borderColor: '#1B1E1F',
-    selectionColor: 'rgba(245, 245, 245, 0.3)',
-
-    // Accent color
-    accentColor: '#519ABA',
-
-    // Other
-    tabTitleColor: 'rgba(187, 190, 189, 0.2)',
-    selectedTabTitleColor: '#BBBEBD',
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -87,11 +103,21 @@ module.exports = {
     // - Make sure to use a full path if the binary name doesn't work
     // - Remove `--login` in shellArgs
     //
-    // Bash on Windows
-    // - Example: `C:\\Windows\\System32\\bash.exe`
+    // Windows Subsystem for Linux (WSL) - previously Bash on Windows
+    // - Example: `C:\\Windows\\System32\\wsl.exe`
+    //
+    // Git-bash on Windows
+    // - Example: `C:\\Program Files\\Git\\bin\\bash.exe`
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
+    //
+    // Cygwin
+    // - Example: `C:\\cygwin64\\bin\\bash.exe`
+    //
+    // Git Bash
+    // - Example: `C:\\Program Files\\Git\\git-cmd.exe`
+    // Then Add `--command=usr/bin/bash.exe` to shellArgs
     shell: 'C:\\Windows\\System32\\wsl.exe',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
@@ -101,8 +127,13 @@ module.exports = {
     // for environment variables
     env: {},
 
-    // set to `false` for no bell
+    // Supported Options:
+    //  1. 'SOUND' -> Enables the bell as a sound
+    //  2. false: turns off the bell
     bell: 'SOUND',
+
+    // An absolute file path to a sound file on the machine.
+    // bellSoundURL: '/path/to/sound/file',
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
@@ -112,10 +143,19 @@ module.exports = {
 
     // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
     // selection is present (`true` by default on Windows and disables the context menu feature)
-    // quickEdit: true,
+    quickEdit: true,
 
-    // URL to custom bell
-    // bellSoundURL: 'http://example.com/bell.mp3',
+    // choose either `'vertical'`, if you want the column mode when Option key is hold during selection (Default)
+    // or `'force'`, if you want to force selection regardless of whether the terminal is in mouse events mode
+    // (inside tmux or vim with mouse mode enabled for example).
+    macOptionSelectionMode: 'vertical',
+
+    // Whether to use the WebGL renderer. Set it to false to use canvas-based
+    // rendering (slower, but supports transparent backgrounds)
+    webGLRenderer: true,
+
+    // if `true` (without backticks and without quotes), Hyper will ignore ligatures provided by some fonts
+    disableLigatures: false,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
@@ -126,7 +166,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-tabs-enhanced', 'hypercwd'],
+  plugins: ['hyper-tabs-enhanced'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -134,7 +174,6 @@ module.exports = {
   localPlugins: [],
 
   keymaps: {
-    // Example
-    // 'window:devtools': 'cmd+alt+o',
+    "pane:splitVertical": "ctrl+\\"
   },
 };
