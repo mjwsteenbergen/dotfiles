@@ -46,9 +46,12 @@ choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 # Add-AppxPackage -Path ~/Ubuntu.appx
 
 choco install -y vcxsrv              --limit-output;
+choco install -y hyper               --limit-output;
 
 ## Set HyperConfig
-#makeSymbolicLinkFile "C:\Users\%username%\.hyper.js C:\Users\%username%\Coding\.dotfiles\.hyper.js"
+if ((Test-Path -Path "$env:LOCALAPPDATA\hyper" )) {
+    makeSymbolicLinkFile "$env:APPDATA\hyper\.hyper.js $ENV:UserProfile\Coding\.dotfiles\.hyper.js"
+}
 
 # Web development
 choco install -y postman             --limit-output;

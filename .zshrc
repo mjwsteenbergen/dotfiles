@@ -103,7 +103,9 @@ alias ufork="git fetch upstream && git checkout master && git rebase upstream/ma
 alias git-tree="git log --graph --oneline --all"
 alias gsc="git stash && git checkout $1 && git stash pop"
 
-eval `dircolors ~/.dir_colors`
+function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/$@ > .gitignore ;}
+
+[[ -e ~/.dir_colors ]] && eval `dircolors ~/.dir_colors`
 
 if [ -f ~/.local_settings ]; then
     . ~/.local_settings

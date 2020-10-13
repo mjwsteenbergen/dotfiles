@@ -5,6 +5,11 @@ Host samaritan
     User martijn
     IdentityFile ~/.ssh/id_rsa
 
+Host samaritanl
+    HostName 192.168.0.144
+    User martijn
+    IdentityFile ~/.ssh/id_rsa
+
 Host mos-develop
     HostName mos-develop.flying-fish.tech
     User root

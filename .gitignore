@@ -2,3 +2,4 @@ vscode/workspaceStorage/*/*
 vscode/ftp-simple.json
 *.vscdb.backup
 *.vscdb
+vscode/globalStorage/

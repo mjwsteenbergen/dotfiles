@@ -194,6 +194,10 @@ Set-ItemProperty $_ "ColorTable14"         $(Convert-ConsoleColor "#CBCB41") # Y
 Set-ItemProperty $_ "ColorTable15"         $(Convert-ConsoleColor "#D4D7D6") # White (F)
 }
 
+###############################################################################
+### Powershell shortcut                                                       #
+###############################################################################
+
 rm "$env:UserProfile\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell.lnk"
 
 $WshShell = New-Object -comObject WScript.Shell
@@ -215,6 +219,12 @@ foreach ($file in $files) {
 
     makeSymbolicLinkFile """$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\$((Get-Item $file).Name)""" "$file"
 }
+
+###############################################################################
+### auto-dark-mode                                                            #
+###############################################################################
+
+choco install auto-dark-mode
 
 ###############################################################################
 ### Fonts                                                                     #

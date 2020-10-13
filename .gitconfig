@@ -12,4 +12,7 @@
 	required = true
 [core]
 	autocrlf = input
-	editor = nano
+	editor = micro
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[credential]
+	helper = cache
