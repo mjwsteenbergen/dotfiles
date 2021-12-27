@@ -50,7 +50,6 @@ $applicationList = @(
     "Microsoft.MicrosoftOfficeHub" #Get Office, and it's "Get Office365" notifications
     # "Microsoft.MicrosoftStickyNotes"
     # "Microsoft.MSPaint"
-    # "Microsoft.Office.OneNote"
     "Microsoft.NetworkSpeedTest"
     "Microsoft.Office.Sway"
     # "Microsoft.Office.OneNote"

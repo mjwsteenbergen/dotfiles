@@ -12,7 +12,7 @@ install-linux-packages() {
 	sudo apt-get install zsh htop curl zip
 
 	# install micro
-	curl https://getmic.ro | bash
+	# curl https://getmic.ro | bash
 }
 
 install-diff-so-fancy() {
@@ -46,7 +46,6 @@ link-files() {
 	link ~/.dotfiles/.nanorc ~/.nanorc
 	link ~/.dotfiles/.dir_colors ~/.dir_colors
 	link ~/.dotfiles/.gitconfig ~/.gitconfig
-	sudo ln -s ~/.dotfiles/doi2bib.sh /usr/local/bin/doi2bib
 }
 
 

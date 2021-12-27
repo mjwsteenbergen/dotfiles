@@ -45,8 +45,11 @@ choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 # Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
 # Add-AppxPackage -Path ~/Ubuntu.appx
 
-choco install -y vcxsrv              --limit-output;
-choco install -y hyper               --limit-output;
+# choco install -y vcxsrv              --limit-output;
+
+## Terminal
+choco install -y microsoft-windows-terminal --limit-output;
+# choco install -y hyper               --limit-output;
 
 ## Set HyperConfig
 if ((Test-Path -Path "$env:LOCALAPPDATA\hyper" )) {
