@@ -1,6 +1,7 @@
 
 #SingleInstance force
 
+::cloud::butt,
 ::gr::Groeten,
 ::hagd::Have a great day,
 ::idd::inderdaad
