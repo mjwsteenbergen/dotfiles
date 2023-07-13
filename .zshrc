@@ -56,19 +56,26 @@ ZSH_THEME="gentoo"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  # alias-tips
   colored-man-pages
-  gitfast
   command-not-found
   docker
-  mvn
-  zsh-autosuggestions
-  fast-syntax-highlighting
+  dotnet
+  F-Sy-H
+  gcloud
   gitignore
-  zsh-better-npm-completion
-  alias-tips
+  git
+  kubectl
+  mvn
+  npm
+  nx-completion
+  nvm
+  yarn
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # User configuration
 
@@ -102,11 +109,18 @@ source $ZSH/oh-my-zsh.sh
 alias ufork="git fetch upstream && git checkout master && git rebase upstream/master && git push"
 alias git-tree="git log --graph --oneline --all"
 alias gsc="git stash && git checkout $1 && git stash pop"
+eval "$(zoxide init zsh)"
+
+alias cd="z"
 
 function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/$@ > .gitignore ;}
 
-[[ -e ~/.dir_colors ]] && eval `dircolors ~/.dir_colors`
+# [[ -e ~/.dir_colors ]] && eval `dircolors ~/.dir_colors`
 
 if [ -f ~/.local_settings ]; then
     . ~/.local_settings
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
