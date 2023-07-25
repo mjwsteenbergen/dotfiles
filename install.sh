@@ -10,7 +10,7 @@ function link {
 install-linux-packages() {
 	echo "# Install Linux Packages"
 	sudo apt-get update
-	sudo apt-get upgrade -y
+	# sudo apt-get upgrade -y
 	sudo apt-get install zsh htop curl zip -y
 
 	if ! command -v zoxide &> /dev/null
