@@ -109,9 +109,12 @@ source ~/.zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 alias ufork="git fetch upstream && git checkout master && git rebase upstream/master && git push"
 alias git-tree="git log --graph --oneline --all"
 alias gsc="git stash && git checkout $1 && git stash pop"
-eval "$(zoxide init zsh)"
 
-alias cd="z"
+if [ command -v zoxide &> /dev/null ]; then
+  eval "$(zoxide init zsh)"
+  alias cd="z"
+fi
+
 
 function gitignore() { curl -sLw "\n" https://www.gitignore.io/api/$@ > .gitignore ;}
 
