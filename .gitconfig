@@ -1,10 +1,15 @@
-[winUpdater]
-	recentlySeenVersion = 2.19.1.windows.1
 [user]
 	name = Martijn Steenbergen
 	email = m.uses+git@outlook.com
 [push]
 	default = simple
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[merge]
+	conflictstyle = zdiff3
+[rebase]
+	autostash = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -12,7 +17,9 @@
 	required = true
 [core]
 	autocrlf = input
-	editor = micro
-	pager = diff-so-fancy | less --tabs=4 -RFX
 [credential]
 	helper = cache
+[rerere]
+	enabled = true
+[diff]
+	algorithm = histogram
