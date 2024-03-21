@@ -1,0 +1,4 @@
+---
+- hosts: mymachine
+  tasks:
+    - import_tasks: tasks/packages/main.yml

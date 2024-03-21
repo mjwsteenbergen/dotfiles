@@ -1,0 +1,3 @@
+security_ssh_allowed_users: 
+  - martijn
+docker_edition: 'ce'

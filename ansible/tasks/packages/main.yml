@@ -1,0 +1,27 @@
+- name: Install Git
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: git
+- name: Install ZSH
+  become: true
+  ansible.builtin.package:
+    name: zsh
+    state: present
+- name: Install curl
+  become: true
+  ansible.builtin.package:
+    name: curl
+    state: present
+- name: Install htop
+  become: true
+  ansible.builtin.package:
+    name: htop
+    state: present
+- name: Install zip
+  become: true
+  ansible.builtin.package:
+    name: zip
+    state: present
+- include_tasks: "packages/{{ OS_TYPE }}.yml"
+

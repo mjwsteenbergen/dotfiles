@@ -7,18 +7,22 @@ function link {
 	ln -s $1 "$2"
 }
 
-install-linux-packages() {
-	echo "# Install Linux Packages"
-	sudo apt-get update
-	# sudo apt-get upgrade -y
-	sudo apt-get install zsh htop curl zip -y
-
-	if ! command -v zoxide &> /dev/null
+run_ansible() {
+	if ! command -v ansible &> /dev/null
 	then
-		echo "## Installing Zoxide"
-		curl -sS https://webinstall.dev/zoxide | bash
+		echo "## Installing Ansible"
+		if command -v pipx &> /dev/null
+		then
+			pipx install ansible-core
+		fi
+
+		if ! command -v pip &> /dev/null
+		then
+			python3 -m pip install --user ansible-core
+		fi
 	fi
 
+	(cd ansible && sudo ansible-playbook playbook.yml -i hosts --extra-vars="OS_TYPE=$1")
 }
 
 install-macos-packages() {
@@ -50,12 +54,15 @@ install-macos-packages() {
 install-packages() {
 	if [[ $OSTYPE == 'darwin'* ]]; then
 		install-macos-packages
+		run_ansible "macos"
 	fi
 
 	if command -v apt-get &> /dev/null
 	then
-		install-linux-packages
+		run_ansible "linux"
 	fi
+
+	
 
 	# if ! command -v nvm &> /dev/null
 	# then
