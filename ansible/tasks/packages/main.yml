@@ -23,5 +23,5 @@
   ansible.builtin.package:
     name: zip
     state: present
-- include_tasks: "packages/{{ OS_TYPE }}.yml"
+- include_tasks: "tasks/packages/{{ OS_TYPE }}/main.yml"
 

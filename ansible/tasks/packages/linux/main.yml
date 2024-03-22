@@ -1,0 +1,2 @@
+- include_tasks: "tasks/packages/linux/1password.yml"
+- include_tasks: "tasks/packages/linux/zoxide.yml"

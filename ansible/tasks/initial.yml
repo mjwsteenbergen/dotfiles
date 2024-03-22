@@ -1,4 +1,0 @@
-- name: Display the config
-  debug:
-    msg: "I can at least debug"
-      

@@ -22,7 +22,7 @@ run_ansible() {
 		fi
 	fi
 
-	(cd ansible && sudo ansible-playbook playbook.yml -i hosts --extra-vars="OS_TYPE=$1")
+	(cd ansible && ansible-playbook dotfiles.yml -i hosts --extra-vars="OS_TYPE=$1")
 }
 
 install-macos-packages() {

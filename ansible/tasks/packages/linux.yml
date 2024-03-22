@@ -1,8 +1,0 @@
-- name: Check if zoxide is installed
-  command: zoxide --help
-  register: zoxide_check
-  ignore_errors: true
-- name: Install zoxide
-  ansible.builtin.command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-  when: zoxide_check.rc == 1
-  
