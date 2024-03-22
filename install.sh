@@ -14,9 +14,7 @@ run_ansible() {
 		if command -v pipx &> /dev/null
 		then
 			pipx install ansible-core
-		fi
-
-		if ! command -v pip &> /dev/null
+		elif command -v pip &> /dev/null
 		then
 			python3 -m pip install --user ansible-core
 		fi
