@@ -1,7 +1,4 @@
 ---
-- hosts: dotfiles
-  roles:
-    - dotfiles
 - hosts: server
   vars_files:
     - roles/server/main.yml

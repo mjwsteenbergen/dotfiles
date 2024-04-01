@@ -1,4 +1,7 @@
-#!/bin/bash
+#! /bin/bash
+
+ANSIBLE_INSTALL=${1:-not_set}
+echo $ANSIBLE_INSTALL
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
@@ -22,8 +25,14 @@ run_ansible() {
 			python3 -m pip install --user ansible-core
 		fi
 	fi
-
+	(cd ansible && ~/.local/bin/ansible-galaxy install -r requirements.yml)
 	(cd ansible && ~/.local/bin/ansible-playbook dotfiles.yml -i hosts --extra-vars="OS_TYPE=$1")
+
+	if [ $ANSIBLE_INSTALL != "not_set" ]
+	then
+		echo "# Installing profile $ANSIBLE_INSTALL"
+		(cd ansible && ~/.local/bin/ansible-playbook $ANSIBLE_INSTALL.yml -i hosts --extra-vars="OS_TYPE=$1")
+	fi 
 }
 
 install-macos-packages() {

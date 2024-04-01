@@ -1,0 +1,2 @@
+- include_tasks: "roles/dotfiles/tasks/linux/1password.yml"
+- include_tasks: "roles/dotfiles/tasks/linux/zoxide.yml"

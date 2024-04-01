@@ -8,5 +8,5 @@
      - curl
      - htop
      - zip
-- include_tasks: "tasks/dotfiles/{{ OS_TYPE }}/main.yml"
+- include_tasks: "roles/dotfiles/tasks/{{ OS_TYPE }}/main.yml"
 

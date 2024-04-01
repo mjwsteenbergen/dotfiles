@@ -1,2 +1,0 @@
-- include_tasks: "tasks/dotfiles/linux/1password.yml"
-- include_tasks: "tasks/dotfiles/linux/zoxide.yml"
