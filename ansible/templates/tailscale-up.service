@@ -1,0 +1,15 @@
+[Unit]
+Description=Enables logging into the service
+
+After=tailscale.service
+Requires=tailscale.service
+
+[Service]
+User=martijn
+TimeoutStartSec=0
+ExecStart=/usr/bin/tailscale up --advertise-exit-node
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

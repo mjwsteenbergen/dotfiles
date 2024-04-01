@@ -1,0 +1,4 @@
+- name: reload systemctl
+  command: systemctl daemon-reload
+- name: reload sysctl.conf
+  command: sysctl -p /etc/sysctl.conf

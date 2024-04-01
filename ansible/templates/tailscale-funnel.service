@@ -1,0 +1,14 @@
+[Unit]
+Description=Opens the https port to be used by the system
+After=tailscale.service
+Requires=tailscale.service
+
+[Service]
+User=martijn
+TimeoutStartSec=0
+ExecStart=/usr/bin/tailscale funnel 443 --https=443
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

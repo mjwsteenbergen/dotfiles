@@ -1,0 +1,12 @@
+- name: Check if Coolify is installed
+  stat:
+    path: /data/coolify/
+  register: coolify_check
+- name: Install Coolify
+  ansible.builtin.shell: |
+    # Copied from https://coolify.io/self-hosted
+    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+  when: coolify_check.rc != 0
+
+
+

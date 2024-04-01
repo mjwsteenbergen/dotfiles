@@ -1,0 +1,12 @@
+- name: Install Packages
+  become: true
+  ansible.builtin.package:
+    state: present
+    name: 
+     - git
+     - zsh
+     - curl
+     - htop
+     - zip
+- include_tasks: "tasks/dotfiles/{{ OS_TYPE }}/main.yml"
+

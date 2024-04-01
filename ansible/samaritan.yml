@@ -1,8 +1,2 @@
 ---
 - hosts: samaritan
-  vars_files:
-    - vars/main.yml
-  roles:
-    - geerlingguy.security
-    - geerlingguy.docker
-    # - geerlingguy.firewall
