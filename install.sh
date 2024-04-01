@@ -14,13 +14,16 @@ run_ansible() {
 		if command -v pipx &> /dev/null
 		then
 			pipx install ansible-core
-		elif command -v pip &> /dev/null
-		then
+		else 
+			if ! command -v pip &> /dev/null
+			then
+				sudo apt install -y python3-pip
+			fi
 			python3 -m pip install --user ansible-core
 		fi
 	fi
 
-	(cd ansible && ansible-playbook dotfiles.yml -i hosts --extra-vars="OS_TYPE=$1")
+	(cd ansible && .local/bin/ansible-playbook dotfiles.yml -i hosts --extra-vars="OS_TYPE=$1")
 }
 
 install-macos-packages() {
