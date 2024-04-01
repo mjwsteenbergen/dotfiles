@@ -6,6 +6,7 @@
   ansible.builtin.shell: "curl -fsSL https://tailscale.com/install.sh | sh"
   when: tailscale_check.rc != 0
 - name: Tailscale | Exit node text
+  become: true
   copy:
     dest: "/etc/sysctl.d/99-tailscale.conf"
     content: |
@@ -18,7 +19,7 @@
     dest: /etc/systemd/system/tailscale-up.service
     chown: root
     owner: root
-  when: tailscale_check.rc != 
+  when: tailscale_check.rc != 0
   notify:
     - reload systemctl
 - name: Tailscale | Funnel Service 
