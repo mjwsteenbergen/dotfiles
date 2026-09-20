@@ -102,8 +102,10 @@ setup-zsh() {
 		[ ! -e "$HOME/.oh-my-zsh/custom/plugins/nx-completion" ] && git clone https://github.com/jscutlery/nx-completion.git $HOME/.oh-my-zsh/custom/plugins/nx-completion
 		
 		
-		[ ! -e "~/.zsh-plugins/" ] && mkdir ~/.zsh-plugins/
-		[ ! -e "~/.zsh-plugins/zsh-autocomplete" ] && git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete ~/.zsh-plugins/zsh-autocomplete
+		# NOTE: quoted "~" is not expanded by the shell, so these tests used to
+		# always succeed and the clone was attempted on every run.
+		[ ! -d "$HOME/.zsh-plugins" ] && mkdir -p "$HOME/.zsh-plugins"
+		[ ! -e "$HOME/.zsh-plugins/zsh-autocomplete" ] && git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete "$HOME/.zsh-plugins/zsh-autocomplete"
 		
 		sudo chmod -R 755 $HOME/.oh-my-zsh/custom/plugins/
 	}
@@ -115,6 +117,7 @@ link-files() {
 	echo "# Setting up linked files"
 	link $SCRIPT_DIR ~/.dotfiles
 	link ~/.dotfiles/.zshrc ~/.zshrc
+	link ~/.dotfiles/.zshenv ~/.zshenv
 	link ~/.dotfiles/.bashrc ~/.bashrc
 	link ~/.dotfiles/.nanorc ~/.nanorc
 	link ~/.dotfiles/.dir_colors ~/.dir_colors
