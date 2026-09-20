@@ -3,16 +3,12 @@
 ANSIBLE_INSTALL=${1:-not_set}
 echo $ANSIBLE_INSTALL
 
-# `pwd -P` resolves symlinks. Without it, running this script from ~/.dotfiles
-# (itself a symlink to the clone) made SCRIPT_DIR the *logical* path
-# ~/.dotfiles, so `link $SCRIPT_DIR ~/.dotfiles` pointed that symlink at itself
-# and every link under it died with "Too many levels of symbolic links".
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd -P )
 
 function link {
 	local src="$1" dest="$2"
 
-	# Never link a path to itself; that is the symlink loop described above.
+	# Never link a path to itself; that would create a symlink loop.
 	if [[ "$src" == "$dest" ]]; then
 		return 0
 	fi
