@@ -1,5 +1,16 @@
 export ZSH=$HOME/.oh-my-zsh
 
+# zsh-autocomplete has to be sourced *before* Oh My Zsh and before any compdef/
+# compinit call, so its Completions/ directory is already on $fpath when compinit
+# builds the completion dump. If it is sourced afterwards, the dump is generated
+# without the plugin and its helpers are never autoloaded, which shows up as
+#   command not found: _autocomplete__should_add_space
+#   command not found: _autocomplete__unambiguous
+# See https://github.com/marlonrichert/zsh-autocomplete#installation
+if [[ -r ~/.zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]]; then
+  source ~/.zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
+
 # Set name of the theme to load. Optionally, if you set this to "random" it'll load a random theme each time that
 # oh-my-zsh is loaded. See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # generate the init script from plugins above
@@ -75,7 +86,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # User configuration
 
