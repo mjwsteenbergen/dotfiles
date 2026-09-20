@@ -120,7 +120,10 @@ alias ufork="git fetch upstream && git checkout master && git rebase upstream/ma
 alias git-tree="git log --graph --oneline --all"
 alias gsc="git stash && git checkout $1 && git stash pop"
 
-if [ command -v zoxide &> /dev/null ]; then
+# `[ command -v zoxide ]` is not a valid test: `[` received "command" "-v"
+# "zoxide" as operands and failed, with the error hidden by the redirect, so
+# zoxide was never initialised. `command -v` is the condition itself.
+if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
   alias cd="z"
 fi
