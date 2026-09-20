@@ -3,11 +3,34 @@
 ANSIBLE_INSTALL=${1:-not_set}
 echo $ANSIBLE_INSTALL
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+# `pwd -P` resolves symlinks. Without it, running this script from ~/.dotfiles
+# (itself a symlink to the clone) made SCRIPT_DIR the *logical* path
+# ~/.dotfiles, so `link $SCRIPT_DIR ~/.dotfiles` pointed that symlink at itself
+# and every link under it died with "Too many levels of symbolic links".
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd -P )
 
 function link {
-	[[ -e $2 ]] && rm "$2"
-	ln -s $1 "$2"
+	local src="$1" dest="$2"
+
+	# Never link a path to itself; that is the symlink loop described above.
+	if [[ "$src" == "$dest" ]]; then
+		return 0
+	fi
+
+	# Refuse to clobber a real directory: `rm` would fail here anyway, and `ln`
+	# would then quietly drop the link *inside* it.
+	if [[ -d "$dest" && ! -L "$dest" ]]; then
+		echo "Skipping $dest: it is a real directory, not a link"
+		return 0
+	fi
+
+	# `-e` is false for a broken or looping symlink, so check `-L` too,
+	# otherwise such a link can never be repaired by re-running this script.
+	if [[ -L "$dest" || -e "$dest" ]]; then
+		rm -f -- "$dest"
+	fi
+
+	ln -s -- "$src" "$dest"
 }
 
 run_ansible() {
